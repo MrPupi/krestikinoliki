@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Крестики_Нолики</title>
+  <style>
+    #main {
+      display: flex;
+      flex-direction: column;
+      margin: 50px auto;
+      /* padding: 50px; */
+      height: 800px;
+      width: 800px;
+    }
+    .divOn {
+      background: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: max-content;
+      width: max-content;
+      padding: 10px;
+    }
+    .devOps {
+      background-color: white;
+      height: 100px;
+      width: 100px;
+      margin: 30px;
+    }
+    span {
+      margin: 40px 46px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main">
+    <div id="divUp" class="divOn">
+      <div id="divOne" class="devOps"><span id="span1">〇</span></div>
+      <div id="divTwo" class="devOps"><span id="span2">✖</span></div>
+      <div id="divThree" class="devOps"><span id="span3">3</span></div>
+    </div>
+    <div id="divMiddle" class="divOn">
+      <div id="div4" class="devOps"><span id="span4">4</span></div>
+      <div id="div5" class="devOps"><span id="span5">5</span></div>
+      <div id="div6" class="devOps"><span id="span6">6</span></div>
+    </div>
+    <div id="divDown" class="divOn">
+      <div id="div7" class="devOps"><span id="span7">7</span></div>
+      <div id="div8" class="devOps"><span id="span8">8</span></div>
+      <div id="div9" class="devOps"><span id="span9">9</span></div>
+    </div>
+  </div>
+  <script src="/dist/script.js"></script>
+</body>
+✖
+〇
+</html>
