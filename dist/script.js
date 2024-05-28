@@ -8,42 +8,43 @@ console.log('It Works');
 // const div7 = document.getElementById('div7')as HTMLDivElement
 // const div8 = document.getElementById('div8')as HTMLDivElement
 // const div9 = document.getElementById('div9')as HTMLDivElement
-var divClass = /** @class */ (function () {
-    function divClass() {
-        this.div = [];
-        for (var i = 1; i <= 9; i++) {
-            this.div[i] = document.getElementById("div" + i);
+// class divClass {
+//   divClass(div1:any) {
+//     throw new Error("Method not implemented.")
+//   }
+//   private div:HTMLDivElement[]=[]
+//   constructor(){
+//     for(let i=1;i<=9;i++) {
+//       this.div[i]=document.getElementById(`div${i}`)as HTMLDivElement
+//     }
+//   }
+//   public getDiv(index:number):HTMLDivElement {
+//     return this.div[index]
+//   }
+// }
+// class spanClass {
+//   spanClass(span1: any) {
+//     throw new Error("Method not implemented.")
+//   }
+//   private span: HTMLSpanElement[] = [];
+//   constructor() {
+//     for(let i=1; i<=9; i++){
+//       this.span[i] = document.getElementById(`span${i}`)as HTMLSpanElement
+//     }
+//   }
+//   public getSpan(index:number): HTMLSpanElement {
+//     return this.span[index];
+//   }
+// } 
+// const divs = new divClass()
+// const spans = new spanClass();
+var cells = document.querySelectorAll('.cell');
+var currentPlayer = 'X';
+cells.forEach(function (cell) {
+    cell.addEventListener('click', function () {
+        if (cell.textContent === '') {
+            cell.textContent = currentPlayer;
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
-    }
-    divClass.prototype.divClass = function (div1) {
-        throw new Error("Method not implemented.");
-    };
-    divClass.prototype.getDiv = function (index) {
-        return this.div[index];
-    };
-    return divClass;
-}());
-var spanClass = /** @class */ (function () {
-    function spanClass() {
-        this.span = [];
-        for (var i = 1; i <= 9; i++) {
-            this.span[i] = document.getElementById("span" + i);
-        }
-    }
-    spanClass.prototype.spanClass = function (span1) {
-        throw new Error("Method not implemented.");
-    };
-    spanClass.prototype.getSpan = function (index) {
-        return this.span[index];
-    };
-    return spanClass;
-}());
-var divs = new divClass();
-var spans = new spanClass();
-var divOne = divs.getDiv(1);
-divOne.addEventListener('click', function () {
-    var spanOne = spans.getSpan(1);
-    if (spanOne) {
-        spanOne.textContent = '✖️';
-    }
+    });
 });

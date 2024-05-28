@@ -9,44 +9,48 @@ console.log('It Works')
 // const div8 = document.getElementById('div8')as HTMLDivElement
 // const div9 = document.getElementById('div9')as HTMLDivElement
 
-class divClass {
-  divClass(div1:any) {
-    throw new Error("Method not implemented.")
-  }
-  private div:HTMLDivElement[]=[]
-  constructor(){
-    for(let i=1;i<=9;i++) {
-      this.div[i]=document.getElementById(`div${i}`)as HTMLDivElement
-    }
-  }
-  public getDiv(index:number):HTMLDivElement {
-    return this.div[index]
-  }
+// class divClass {
+//   divClass(div1:any) {
+//     throw new Error("Method not implemented.")
+//   }
+//   private div:HTMLDivElement[]=[]
+//   constructor(){
+//     for(let i=1;i<=9;i++) {
+//       this.div[i]=document.getElementById(`div${i}`)as HTMLDivElement
+//     }
+//   }
+//   public getDiv(index:number):HTMLDivElement {
+//     return this.div[index]
+//   }
   
-}
+// }
 
-class spanClass {
-  spanClass(span1: any) {
-    throw new Error("Method not implemented.")
-  }
-  private span: HTMLSpanElement[] = [];
-  constructor() {
-    for(let i=1; i<=9; i++){
-      this.span[i] = document.getElementById(`span${i}`)as HTMLSpanElement
+// class spanClass {
+//   spanClass(span1: any) {
+//     throw new Error("Method not implemented.")
+//   }
+//   private span: HTMLSpanElement[] = [];
+//   constructor() {
+//     for(let i=1; i<=9; i++){
+//       this.span[i] = document.getElementById(`span${i}`)as HTMLSpanElement
+//     }
+//   }
+//   public getSpan(index:number): HTMLSpanElement {
+//     return this.span[index];
+//   }
+// } 
+
+// const divs = new divClass()
+// const spans = new spanClass();
+
+const cells = document.querySelectorAll('.cell')
+let currentPlayer = 'X';
+
+cells.forEach(cell => {
+  cell.addEventListener('click', () => { 
+    if (cell.textContent==='') {
+      cell.textContent=currentPlayer
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
     }
-  }
-  public getSpan(index:number): HTMLSpanElement {
-    return this.span[index];
-  }
-} 
-
-const divs = new divClass()
-const spans = new spanClass();
-
-let divOne = divs.getDiv(1)
-divOne.addEventListener('click', function(){
-  let spanOne = spans.getSpan(1);
-  if(spanOne) {
-    spanOne.textContent = '✖️'
-  }
+  })
 })
